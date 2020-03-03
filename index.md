@@ -1,37 +1,72 @@
-## Welcome to GitHub Pages
+Git Commands
+============
 
-You can use the [editor on GitHub](https://github.com/rudra47/git-command/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+## Translated Versions
+- [Versão em português](READMEpt.md)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+___
 
-### Markdown
+_A list of my commonly used Git commands_
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+*If you are interested in my Git aliases, have a look at my `.bash_profile`, found here: https://github.com/joshnh/bash_profile/blob/master/.bash_profile*
 
-```markdown
-Syntax highlighted code block
+--
 
-# Header 1
-## Header 2
-### Header 3
+### Getting & Creating Projects
 
-- Bulleted
-- List
+| Command | Description |
+| ------- | ----------- |
+| `git init` | Initialize a local Git repository |
+| `git clone ssh://git@github.com/[username]/[repository-name].git` | Create a local copy of a remote repository |
 
-1. Numbered
-2. List
+### Basic Snapshotting
 
-**Bold** and _Italic_ and `Code` text
+| Command | Description |
+| ------- | ----------- |
+| `git status` | Check status |
+| `git add [file-name.txt]` | Add a file to the staging area |
+| `git add -A` | Add all new and changed files to the staging area |
+| `git commit -m "[commit message]"` | Commit changes |
+| `git rm -r [file-name.txt]` | Remove a file (or folder) |
 
-[Link](url) and ![Image](src)
-```
+### Branching & Merging
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+| Command | Description |
+| ------- | ----------- |
+| `git branch` | List branches (the asterisk denotes the current branch) |
+| `git branch -a` | List all branches (local and remote) |
+| `git branch [branch name]` | Create a new branch |
+| `git branch -d [branch name]` | Delete a branch |
+| `git push origin --delete [branch name]` | Delete a remote branch |
+| `git checkout -b [branch name]` | Create a new branch and switch to it |
+| `git checkout -b [branch name] origin/[branch name]` | Clone a remote branch and switch to it |
+| `git branch -m [old branch name] [new branch name]` | Rename a local branch |
+| `git checkout [branch name]` | Switch to a branch |
+| `git checkout -` | Switch to the branch last checked out |
+| `git checkout -- [file-name.txt]` | Discard changes to a file |
+| `git merge [branch name]` | Merge a branch into the active branch |
+| `git merge [source branch] [target branch]` | Merge a branch into a target branch |
+| `git stash` | Stash changes in a dirty working directory |
+| `git stash clear` | Remove all stashed entries |
 
-### Jekyll Themes
+### Sharing & Updating Projects
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/rudra47/git-command/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+| Command | Description |
+| ------- | ----------- |
+| `git push origin [branch name]` | Push a branch to your remote repository |
+| `git push -u origin [branch name]` | Push changes to remote repository (and remember the branch) |
+| `git push` | Push changes to remote repository (remembered branch) |
+| `git push origin --delete [branch name]` | Delete a remote branch |
+| `git pull` | Update local repository to the newest commit |
+| `git pull origin [branch name]` | Pull changes from remote repository |
+| `git remote add origin ssh://git@github.com/[username]/[repository-name].git` | Add a remote repository |
+| `git remote set-url origin ssh://git@github.com/[username]/[repository-name].git` | Set a repository's origin branch to SSH |
 
-### Support or Contact
+### Inspection & Comparison
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+| Command | Description |
+| ------- | ----------- |
+| `git log` | View changes |
+| `git log --summary` | View changes (detailed) |
+| `git log --oneline` | View changes (briefly) |
+| `git diff [source branch] [target branch]` | Preview changes before merging |
